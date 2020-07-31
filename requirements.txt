@@ -2,8 +2,8 @@
 # Runtime dependencies.
 #
 certifi
-inflection==0.3.0
-pytz==2016.7
-requests==2.20.1
-urllib3==1.24.2
-six==1.9.0
+inflection==0.5.0
+pytz==2020.1
+requests==2.24.0
+urllib3==1.25.10
+six==1.15.0
