@@ -22,7 +22,7 @@ class CollectionProxyTest(unittest.TestCase):  # noqa
         body = users_scroll(include_users=False)
         with patch.object(Client, 'get', return_value=body) as mock_method:
             emails = [user.email for user in self.client.users.scroll()]
-            mock_method.assert_called('/users/scroll', {})
+            mock_method.assert_called_with('/users/scroll', {})
             eq_(emails, [])  # noqa
 
     @istest

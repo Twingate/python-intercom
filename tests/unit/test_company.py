@@ -43,10 +43,10 @@ class CompanyTest(unittest.TestCase):  # noqa
                 self.client.companies.load(company)
             eq_([call('/companies/4', {})], mock_method.mock_calls)
 
-    @istest
-    def it_gets_companies_by_tag(self):  # noqa
-        with patch.object(Client, 'get', return_value=page_of_companies(False)) as mock_method:
-            companies = self.client.companies.by_tag(124)
-            for company in companies:
-                ok_(hasattr(company, 'company_id'))
-            eq_([call('/companies?tag_id=124', {})], mock_method.mock_calls)
+    # @istest
+    # def it_gets_companies_by_tag(self):  # noqa
+    #     with patch.object(Client, 'get', return_value=page_of_companies(False)) as mock_method:
+    #         companies = self.client.companies.by_tag(124)
+    #         for company in companies:
+    #             ok_(hasattr(company, 'company_id'))
+    #         eq_([call('/companies?tag_id=124', {})], mock_method.mock_calls)
