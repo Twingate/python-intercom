@@ -82,7 +82,7 @@ class CollectionProxy(six.Iterator):
         if response is None:
             raise HttpError('Http Error - No response entity returned')
 
-        collection = response[self.collection]
+        collection = response.get("data")
         # if there are no resources in the response stop iterating
         if collection is None:
             raise StopIteration
