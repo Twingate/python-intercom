@@ -1,5 +1,5 @@
-python-intercom
-===============
+python-intercom (Twingate Fork)
+===============================
 
 |PyPI Version| |PyPI Downloads| |Travis CI Build| |Coverage Status|
 
