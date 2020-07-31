@@ -185,7 +185,7 @@ def page_of_users(include_next_link=False):
             "per_page": 50,
             "total_pages": 7
         },
-        "users": [
+        "data": [
             get_user("user1@example.com"),
             get_user("user2@example.com"),
             get_user("user3@example.com")],
@@ -220,7 +220,7 @@ def page_of_events(include_next_link=False):
         "pages": {
             "next": None,
         },
-        "events": [
+        "data": [
             get_event("invited-friend"),
             get_event("bought-sub")],
     }
@@ -232,7 +232,7 @@ def page_of_events(include_next_link=False):
 def page_of_companies(include_next_link=False):
     page = {
         "type": "company.list",
-        "pages": {
+        "data": {
             "type": "pages",
             "page": 1,
             "next": None,
