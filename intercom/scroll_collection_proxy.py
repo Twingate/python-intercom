@@ -14,6 +14,9 @@ class ScrollCollectionProxy(six.Iterator):
         # resource name
         self.resource_name = resource_name
 
+        # key name of resource list
+        self.resource_key = "data"
+
         # resource class
         self.resource_class = resource_class
 
@@ -76,14 +79,14 @@ class ScrollCollectionProxy(six.Iterator):
             raise HttpError('Http Error - No response entity returned')
 
         # create the resource iterator
-        collection = response[self.resource_name]
+        collection = response[self.resource_key]
         self.resources = iter(collection)
         # grab the next page URL if one exists
         self.scroll_param = self.extract_scroll_param(response)
 
     def records_present(self, response):
         """Return whether there are resources in the response."""
-        return len(response.get(self.resource_name)) > 0
+        return len(response.get(self.resource_key)) > 0
 
     def extract_scroll_param(self, response):
         """Extract the scroll_param from the response."""
